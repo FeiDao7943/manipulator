@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0b0b47fa-da34-4447-91d1-33069cb47c18" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/define/configuration.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/define/gui.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/sections/position.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2J0E47qeQVRINEAIpX9NL9I7kyH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindow运行.ShowToolbar": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/unusualroutetaker/Desktop/Developer/Pycharm/manipulator",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "configurable.group.language"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/figure" />
+      <recent name="$PROJECT_DIR$/operator" />
+      <recent name="$PROJECT_DIR$/define" />
+      <recent name="$PROJECT_DIR$/sections" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="manipulator" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="0b0b47fa-da34-4447-91d1-33069cb47c18" name="变更" comment="" />
+      <created>1671206405766</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671206405766</updated>
+      <workItem from="1671206406975" duration="18000" />
+      <workItem from="1671206430003" duration="552000" />
+      <workItem from="1671207004707" duration="66000" />
+      <workItem from="1671207100842" duration="32000" />
+      <workItem from="1671207144697" duration="167000" />
+      <workItem from="1671207325750" duration="138000" />
+      <workItem from="1671207482682" duration="281000" />
+      <workItem from="1671207788801" duration="1487000" />
+      <workItem from="1671209303152" duration="4151000" />
+      <workItem from="1671213486901" duration="2000" />
+      <workItem from="1671213660816" duration="6295000" />
+      <workItem from="1671220494009" duration="2619000" />
+      <workItem from="1671223186824" duration="533000" />
+      <workItem from="1671223742972" duration="13000" />
+      <workItem from="1671223799740" duration="852000" />
+      <workItem from="1671224700424" duration="91000" />
+      <workItem from="1671224842893" duration="121000" />
+      <workItem from="1671224988999" duration="22000" />
+      <workItem from="1671225021037" duration="303000" />
+      <workItem from="1671225331295" duration="29000" />
+      <workItem from="1671225405460" duration="185000" />
+      <workItem from="1671225683144" duration="387000" />
+      <workItem from="1671226073472" duration="1260000" />
+      <workItem from="1671227348052" duration="822000" />
+      <workItem from="1671228199200" duration="219000" />
+      <workItem from="1671228489024" duration="908000" />
+      <workItem from="1671229436109" duration="2755000" />
+      <workItem from="1671275629804" duration="9000" />
+      <workItem from="1671276163865" duration="2000" />
+      <workItem from="1672840234419" duration="133000" />
+      <workItem from="1672842119794" duration="194000" />
+      <workItem from="1672842825915" duration="30000" />
+      <workItem from="1672854883988" duration="36000" />
+      <workItem from="1673099089872" duration="24943000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/define/configuration.py</url>
+          <line>79</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/operator/matrix_calculator.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/manipulator$main.coverage" NAME="main 覆盖结果" MODIFIED="1673123448031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
