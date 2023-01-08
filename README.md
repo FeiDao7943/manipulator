@@ -4,7 +4,7 @@
 
 <div align=center>
 <img src="https://github.com/FeiDao7943/manipulator/blob/main/figure/example_1.png" width="400px">
-<img src="https://github.com/FeiDao7943/manipulator/blob/main/figure/example_2.png" width="327px">
+<img src="https://github.com/FeiDao7943/manipulator/blob/main/figure/example_2.png" width="324px">
 </div>
 
 ### Usage
