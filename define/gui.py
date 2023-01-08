@@ -84,7 +84,7 @@ class GUI(wx.Frame):
         self.draw_check = wx.CheckBox(gui, label='Draw figure', pos=(450, 450))
         self.sub_axis_check = wx.CheckBox(gui, label='sub axis draw', pos=(630, 360))
         self.position_check.SetValue(True)
-        self.velocity_check.SetValue(False)
+        self.velocity_check.SetValue(True)
         self.torque_check.SetValue(False)
         self.print_check.SetValue(True)
         self.draw_check.SetValue(True)
@@ -220,7 +220,7 @@ class GUI(wx.Frame):
                               self.parameter_list[elements] + '_' + 'value', )].SetLabel('0')
 
         self.position_check.SetValue(True)
-        self.velocity_check.SetValue(False)
+        self.velocity_check.SetValue(True)
         self.torque_check.SetValue(False)
         self.print_check.SetValue(True)
         self.draw_check.SetValue(True)

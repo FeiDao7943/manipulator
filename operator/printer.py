@@ -22,9 +22,6 @@ def print_data(end_data):
             print('[%.3f, %.3f, %.3f]' % (end_data['final_velocity'][0], end_data['final_velocity'][1], end_data['final_velocity'][2]))
 
 
-
-
-
 if __name__ == '__main__':
     print("test printer.py")
     print(1)
