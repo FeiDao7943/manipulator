@@ -3,12 +3,13 @@
 # @author : unusualroutetaker
 # @email : feidaofeidao@outlook.com
 import wx
+import time
 import numpy as np
 
 
 def gui_collection(end_data):
     app = wx.App()
-    user_input = GUI()
+    user_input = GUI(end_data)
     user_input.Show()
     app.MainLoop()
     end_data['link_num'] = user_input.gui_data['joint0_check'] + \
@@ -52,7 +53,7 @@ def gui_collection(end_data):
 
 
 class GUI(wx.Frame):
-    def __init__(self):
+    def __init__(self, end_data):
         self.check_result = -1
         self.joint_list = ['joint0', 'joint1', 'joint2']
 
@@ -137,7 +138,7 @@ class GUI(wx.Frame):
 
     def Button_Draw_click(self, event):
         if self.check_result == 1:
-            wx.Exit()
+            self.Close()
         if self.check_result == -1:
             self.Hint_word.AppendText('[Error]: Not checked, please run the【Check】first! \n')
         if self.check_result == 0:

@@ -27,6 +27,7 @@ sys.path.append(os.path.join(ROOT_DIR, 'operator'))
 from gui import gui_collection
 from configuration import configuration_class
 from position import position_class
+from velocity import jacobian
 from drawer import draw_fig
 from printer import print_data
 
@@ -53,11 +54,14 @@ def main_calculation():
     position_calculation = position_class(end_data["configuration_data"])
     end_data = position_calculation.get_position(end_data)
 
+    """velocity calculation"""
+    end_data = jacobian(end_data)
+
     """print part"""
     print_data(end_data)
 
     """drawing part"""
-    draw_fig(end_data, "joint")
+    draw_fig(end_data)
 
 
 if __name__ == '__main__':
