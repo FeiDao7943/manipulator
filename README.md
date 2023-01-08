@@ -3,8 +3,8 @@
 ### Example figures
 
 <div align=center>
-<img src="https://github.com/FeiDao7943/manipulator/figure/example_1.png" width="400px">
-<img src="https://github.com/FeiDao7943/manipulator/figure/example_2.png" width="400px">
+<img src="https://github.com/FeiDao7943/manipulator/blob/main/figure/example_1.png" width="400px">
+<img src="https://github.com/FeiDao7943/manipulator/blob/main/figure/example_2.png" width="400px">
 </div>
 
 ### Usage
