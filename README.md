@@ -8,8 +8,8 @@
 </div>
 
 ### Usage
->* Code is developed on `Python3.7` in `Mac OS`, mian package such as `matplotlib==3.5.3`, 
-`numpy==1.21.6`, `wxpython==4.1.0`, `argparse==1.1` in requirement.txt are required.
+>* Code is developed on `Python3.7` in `Mac OS`, which had test in `Windows 10`.
+>* mian package in `requirement.txt` are required, run `pip install -r requirements/requirements.txt` to install.
 >* Run `python main.py` will open the GUI for define the parameters, enter the values and choose the checkboxes.
 >* Before click the【Draw】bottom, the parameter should all pass the check. The error place will display in `Hint` label.
 
@@ -31,4 +31,5 @@
 >* Update the function that saving the parameters from the last drawing and you can open and load them directly the next time
 you run it, including the value and checkbox. This is friendly for those who need to modify parameters frequently.
 >* Fixed an issue where the parameter configuration window could be closed directly to skip the checking session and draw directly.
->* Fixed an issue that some redundant printing for debugging purposes. 
+>* Fixed an issue that some redundant printing for debugging purposes.
+>* Test the script in Windows10, and the file `requirements.txt` has added.
