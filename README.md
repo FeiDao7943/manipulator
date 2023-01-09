@@ -32,3 +32,4 @@
 you run it, including the value and checkbox.
 This is friendly for those who need to modify parameters frequently.
 >* Fixed an issue where the parameter configuration window could be closed directly to skip the checking session and draw directly.
+>* Fixed an issue that some redundant printing for debugging purposes.
