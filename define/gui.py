@@ -12,6 +12,9 @@ def gui_collection(end_data):
     user_input = GUI(end_data)
     user_input.Show()
     app.MainLoop()
+    if not user_input.gui_data['check_result'] == 1:
+        exit()
+
     end_data['link_num'] = user_input.gui_data['joint0_check'] + \
                            user_input.gui_data['joint1_check'] + \
                            user_input.gui_data['joint2_check']
@@ -59,9 +62,16 @@ class GUI(wx.Frame):
 
         self.parameter_list = ['length', 'angle_x', 'angle_y', 'angle_z',
                                'angular_velocity_x', 'angular_velocity_y', 'angular_velocity_z']
-        self.gui_data = {'joint0_check': False, 'joint1_check': False, 'joint2_check': False}
+        self.gui_data = {'check_result': 0}
         self.check_list = []
         self.value_list = []
+        with open("./define/configuration_save.txt", "r") as config_save:
+            safe_data = config_save.readlines()
+        for data_count in range(len(safe_data)):
+            safe_data[data_count] = str(safe_data[data_count]).replace('\n', '')
+            safe_data[data_count] = str(safe_data[data_count]).replace("'", '')
+            safe_data[data_count] = str(safe_data[data_count]).replace('True', '1')
+            safe_data[data_count] = str(safe_data[data_count]).replace('False', '0')
         wx.Frame.__init__(self, None, title='Parameters', size=(800, 550))
         gui = wx.Panel(self)
         Title = wx.StaticText(gui, label='Manipulator Calculator and Draughtsman', pos=(220, 20))
@@ -83,12 +93,13 @@ class GUI(wx.Frame):
         self.print_check = wx.CheckBox(gui, label='Print result', pos=(450, 430))
         self.draw_check = wx.CheckBox(gui, label='Draw figure', pos=(450, 450))
         self.sub_axis_check = wx.CheckBox(gui, label='sub axis draw', pos=(630, 360))
-        self.position_check.SetValue(True)
-        self.velocity_check.SetValue(True)
-        self.torque_check.SetValue(False)
-        self.print_check.SetValue(True)
-        self.draw_check.SetValue(True)
-        self.sub_axis_check.SetValue(True)
+
+        self.position_check.SetValue(bool(int(safe_data[24])))
+        self.velocity_check.SetValue(bool(int(safe_data[25])))
+        self.torque_check.SetValue(bool(int(safe_data[26])))
+        self.print_check.SetValue(bool(int(safe_data[27])))
+        self.draw_check.SetValue(bool(int(safe_data[28])))
+        self.sub_axis_check.SetValue(bool(int(safe_data[29])))
 
 
         joint_label_x = 25
@@ -96,13 +107,16 @@ class GUI(wx.Frame):
         joint_joint_value_x = 150
         joint_joint_unit_x = 210
 
+        element_count = 0
         for joint_num in range(len(self.joint_list)):
+
             joint0_head_label = wx.StaticText(gui, label=('JOINT ' + str(joint_num)),
                                               pos=(joint_label_x, joint_joint_begin_y))
             globals()[self.joint_list[joint_num] + '_check'] = wx.CheckBox(gui, label='',
                                               pos=(joint_label_x + 60, joint_joint_begin_y))
-
+            globals()[self.joint_list[joint_num] + '_check'].SetValue(bool(int(float(safe_data[element_count]))))
             step_y = joint_joint_begin_y + 5
+            element_count += 1
 
             for elements in range(len(self.parameter_list)):
                 if not (elements - 1) % 3:
@@ -113,20 +127,20 @@ class GUI(wx.Frame):
 
                 if elements == 0:
                     unit = 'm'
-                    value = 1
+
                 elif elements <= 3:
                     unit = 'pi'
-                    value = 0
+
                 elif elements > 3:
                     unit = 'pi*rad/s'
-                    value = 0
 
                 globals()[tem_name_list[0]] = wx.StaticText(gui, label=self.parameter_list[elements],
                                                             pos=(joint_label_x, step_y + 25))
                 globals()[tem_name_list[1]] = wx.TextCtrl(gui, pos=(joint_joint_value_x, step_y + 23), size=(60, 25),
-                                                          value=str(value))
+                                                          value=str(safe_data[element_count]))
                 globals()[tem_name_list[2]] = wx.StaticText(gui, label=unit, pos=(joint_joint_unit_x, step_y + 25))
                 step_y += 25
+                element_count += 1
 
             joint_label_x += 250
             joint_joint_value_x += 250
@@ -138,6 +152,22 @@ class GUI(wx.Frame):
 
     def Button_Draw_click(self, event):
         if self.check_result == 1:
+            self.gui_data['check_result'] = 1
+            with open("./define/configuration_save.txt", "w") as f:
+                for joint_num in range(len(self.joint_list)):
+                    f.write(str(self.gui_data[self.joint_list[joint_num] + '_check']) + '\n')
+                    for elements in range(len(self.parameter_list)):
+                        f.write(str(self.gui_data[str(self.joint_list[joint_num] + '_' +
+                                          self.parameter_list[elements] + '_' + 'value')]) + '\n')
+
+                f.write(str(self.gui_data['position_check']) + '\n')
+                f.write(str(self.gui_data['velocity_check']) + '\n')
+                f.write(str(self.gui_data['torque_check']) + '\n')
+                f.write(str(self.gui_data['print_check']) + '\n')
+                f.write(str(self.gui_data['draw_check']) + '\n')
+                f.write(str(self.gui_data['sub_axis_check']) + '\n')
+
+
             self.Close()
         if self.check_result == -1:
             self.Hint_word.AppendText('[Error]: Not checked, please run the【Check】first! \n')
@@ -204,6 +234,15 @@ class GUI(wx.Frame):
 
         check_flag_list.append(joint_check_flag)
 
+        # length check
+        length_check_flag = 1
+        for joint_num in range(len(self.joint_list)):
+            if self.gui_data[self.joint_list[joint_num] + '_check']:
+                if self.gui_data[self.joint_list[joint_num] + '_length_value'] == 0:
+                    length_check_flag = 0
+                    self.Hint_word.AppendText("[Error]: Link-Length of " + self.joint_list[joint_num] + " can't be zero! \n")
+        check_flag_list.append(length_check_flag)
+
         # total check result
         self.check_result = -1
         for counter in range(len(check_flag_list)):
@@ -212,13 +251,23 @@ class GUI(wx.Frame):
             self.check_result = abs(self.check_result)
             self.Hint_word.AppendText('[Done]: Check has passed. Now【Draw】is available! \n')
 
+
+
     def Button_Reset_click(self, event):
         for joint_num in range(len(self.joint_list)):
-            globals()[self.joint_list[joint_num] + '_check'].SetValue(False)
-            for elements in range(len(self.parameter_list)):
-                globals()[str(self.joint_list[joint_num] + '_' +
-                              self.parameter_list[elements] + '_' + 'value', )].SetLabel('0')
+            if joint_num == 0:
+                globals()[self.joint_list[joint_num] + '_check'].SetValue(True)
+            else:
+                globals()[self.joint_list[joint_num] + '_check'].SetValue(False)
 
+            for elements in range(len(self.parameter_list)):
+                if elements == 0:
+                    globals()[str(self.joint_list[joint_num] + '_' +
+                              self.parameter_list[elements] + '_' + 'value', )].SetLabel('1.0')
+                else:
+                    globals()[str(self.joint_list[joint_num] + '_' +
+                              self.parameter_list[elements] + '_' + 'value', )].SetLabel('0.0')
+        globals()['joint0_check'].SetValue(True)
         self.position_check.SetValue(True)
         self.velocity_check.SetValue(True)
         self.torque_check.SetValue(False)
@@ -232,3 +281,4 @@ if __name__ == "__main__":
     window = GUI()
     window.Show()
     app.MainLoop()
+

@@ -15,7 +15,8 @@
 
 ### Current shortcomings (will be improved in the future)
 >* Fractional input is not currently supported and parameters can only be entered as decimals.
->* The parameters entered last time are not saved, but will be cleared on the next run. This is not very convenient for debuggers.
+>* ~~The parameters entered last time are not saved, but will be cleared on the next run. This is not very convenient for debuggers.~~
+   **(Fixed at 2023/1/9)**
 >* Feel free to point out other shortcomings in `issure` or `email` if possible.
 
 ### Update Record
@@ -25,3 +26,9 @@
 
 **2023/1/8**
 >* Update the `velocity` calculation part, only the `torque` part leave.
+
+**2023/1/9**
+>* Update the function that Save the parameters from the last drawing and you can open and load them directly the next time
+you run it, including the value and checkbox.
+This is friendly for those who need to modify parameters frequently.
+>* Fixed an issue where the parameter configuration window could be closed directly to skip the checking session and draw directly.

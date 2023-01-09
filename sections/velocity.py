@@ -93,7 +93,6 @@ def jacobian(end_data):
 
     # end_data['final_velocity'] = final_velocity + end_data["position_data"][-1][:]
     end_data['final_velocity'] = final_velocity
-    print(end_data['final_velocity'])
 
     return end_data
 
