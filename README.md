@@ -28,8 +28,7 @@
 >* Update the `velocity` calculation part, only the `torque` part leave.
 
 **2023/1/9**
->* Update the function that Save the parameters from the last drawing and you can open and load them directly the next time
-you run it, including the value and checkbox.
-This is friendly for those who need to modify parameters frequently.
+>* Update the function that saving the parameters from the last drawing and you can open and load them directly the next time
+you run it, including the value and checkbox. This is friendly for those who need to modify parameters frequently.
 >* Fixed an issue where the parameter configuration window could be closed directly to skip the checking session and draw directly.
 >* Fixed an issue that some redundant printing for debugging purposes.
