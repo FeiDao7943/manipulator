@@ -22,7 +22,7 @@
 ### Update Record
 **2023/1/7**
 >* Update the only `position` part and GUI design.
->* I'm too sleepy tonight, so I'll come back to refine the code when I'm awake.
+>* ~~I'm too sleepy tonight, so I'll come back to refine the code when I'm awake.~~ **(Already waking up)**
 
 **2023/1/8**
 >* Update the `velocity` calculation part, only the `torque` part leave.
