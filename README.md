@@ -1,4 +1,4 @@
-# Manipulator
+# Manipulator Calculator and Draughtsman
 
 ### Example figures
 
