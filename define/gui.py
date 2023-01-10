@@ -5,7 +5,7 @@
 import wx
 import time
 import numpy as np
-
+import math
 
 def gui_collection(end_data):
     app = wx.App()
@@ -201,16 +201,57 @@ class GUI(wx.Frame):
         number_check_flag = 1
         for joint_num in range(len(self.joint_list)):
             for elements in range(len(self.parameter_list)):
-                try:
-                    self.gui_data[str(self.joint_list[joint_num] + '_' +
-                                      self.parameter_list[elements] + '_' + 'value', )] = \
-                        float(self.gui_data[str(self.joint_list[joint_num] + '_' +
-                                                self.parameter_list[elements] + '_' + 'value', )])
-                except:
-                    self.Hint_word.AppendText('[Error]: Value of【' + str(self.joint_list[joint_num] + '_' +
-                                                                         self.parameter_list[
-                                                                             elements] + '】is Error.\n'))
-                    number_check_flag = 0
+                digit = 0
+                molecular_value = 0
+                denominator_value = 0
+                Fractional_flag = 0
+                value_str = str(self.gui_data[str(self.joint_list[joint_num] + '_' +
+                                                  self.parameter_list[elements] + '_' + 'value', )])
+                for letter in range(len(value_str)):
+                    if value_str[letter] == '/':
+                        Fractional_flag = 1
+
+                if Fractional_flag:
+                    frac_correct_flag = 1
+                    for letter in range(len(value_str)):
+                        if value_str[letter] == '/':
+                            digit = letter
+                            for letter in range(digit):
+                                try:
+                                    molecular_value += float(value_str[letter]) * math.pow(10, digit - letter - 1)
+                                except:
+                                    frac_correct_flag = 0
+
+                            for letter in range(digit + 1, len(value_str)):
+                                try:
+                                    denominator_value += float(value_str[letter]) * math.pow(10,
+                                                                                             len(value_str) - letter - 1)
+                                except:
+                                    frac_correct_flag = 0
+
+                            if not frac_correct_flag:
+                                self.Hint_word.AppendText('[Error]: Value of【' + str(self.joint_list[joint_num] + '_' +
+                                                                                     self.parameter_list[
+                                                                                         elements] + '】is Error.\n'))
+                                number_check_flag = 0
+
+                            else:
+                                final_value = molecular_value / denominator_value
+
+                                self.gui_data[str(self.joint_list[joint_num] + '_' +
+                                                  self.parameter_list[elements] + '_' + 'value', )] = final_value
+                else:
+                    try:
+                        self.gui_data[str(self.joint_list[joint_num] + '_' +
+                                          self.parameter_list[elements] + '_' + 'value', )] = \
+                            float(self.gui_data[str(self.joint_list[joint_num] + '_' +
+                                                    self.parameter_list[elements] + '_' + 'value', )])
+                    except:
+                        self.Hint_word.AppendText('[Error]: Value of【' + str(self.joint_list[joint_num] + '_' +
+                                                                             self.parameter_list[
+                                                                                 elements] + '】is Error.\n'))
+                        number_check_flag = 0
+
         check_flag_list.append(number_check_flag)
 
         # joint choose check

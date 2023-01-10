@@ -7,7 +7,8 @@
     <list default="true" id="0b0b47fa-da34-4447-91d1-33069cb47c18" name="变更" comment="Add needed information">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/define/configuration_save.txt" beforeDir="false" afterPath="$PROJECT_DIR$/define/configuration_save.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/define/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/define/gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +132,8 @@
       <workItem from="1673141168966" duration="12437000" />
       <workItem from="1673259326474" duration="331000" />
       <workItem from="1673260033220" duration="4549000" />
-      <workItem from="1673265017337" duration="662000" />
+      <workItem from="1673265017337" duration="1236000" />
+      <workItem from="1673323369943" duration="2017000" />
     </task>
     <task id="LOCAL-00001" summary="Add velocity part">
       <created>1673151128560</created>
@@ -224,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673263984127</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add needed information">
+      <created>1673265701175</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673265701175</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add needed information">
+      <created>1673265957889</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673265957889</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
